@@ -1,12 +1,13 @@
 best <- function(state, outcome) {
   
+  datos <- read.csv("outcome-of-care-measures.csv")
+  
   if (outcome=="heart attack") columna=11
   if (outcome=="heart failure") columna=17
   if (outcome=="pneumonia") columna=23
   
-  if(!any(state == data$State)) stop('invalid state')
+  if(!any(state == datos$State)) stop('invalid state')
   
-  datos <- read.csv("outcome-of-care-measures.csv")
   
   datos2 <- subset(datos, datos$State==state)
   
