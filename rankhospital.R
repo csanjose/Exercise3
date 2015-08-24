@@ -28,9 +28,7 @@ rankhospital <- function(state, outcome, num = "best") {
     pos=1}
   else if (num=="worst") {
     pos=length(datos5[,1])}
-  else if (num<=length(datos5[,1])&num>=1) {
-    pos=num}
-  else return(message("NA"))
+  else pos=num
   
   # Returns hospital
   as.character(datos6[pos, "Hospital.Name"])
