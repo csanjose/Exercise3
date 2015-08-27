@@ -20,7 +20,7 @@ rankhospital <- function(state, outcome, num = "best") {
   # Eliminate NA
   datos4 <- datos3[which(datos3[3] != "Not Available"), ]
   # Sort by 'columna'
-  datos5 <- datos4[order(datos4[3]),]
+  datos5 <- datos4[order(as.numeric(as.character(datos4[,3]))),]
   # Adds column with rank
   datos6 <- cbind(datos5, "Rank"=1:length(datos5[,1]))
   
